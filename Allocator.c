@@ -63,7 +63,7 @@ static block_header *find_free_block_for_allocating(size_t size){
     return NULL;
 }
 
-static void split_unused_byte_of_blocks(block_header *block, size_t size){
+static void split_unused_byte_of_blocks_and_add_it_to_bin(block_header *block, size_t size){
     if (block->size <= size + HEADER_SIZE + ALIGNMENT) {
         return;
     }
