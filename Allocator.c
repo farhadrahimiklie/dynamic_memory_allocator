@@ -89,7 +89,7 @@ static void split_unused_byte_of_blocks_and_add_it_to_bin(block_header *block, s
     bin_insert_free_blocks(new_block);
 }
 
-static void Coalesce_merge(block_header *block){
+static void Coalesce_mean_Merge_two_free_block_and_add_to_bin(block_header *block){
     if (block->next_physical_block != NULL && block->next_physical_block->free) {
         block_header *next = block->next_physical_block;
         bin_remove_free_blocks(next);
@@ -116,7 +116,7 @@ static void Coalesce_merge(block_header *block){
     bin_insert_free_blocks(block);
 }
 
-static block_header *request_free_space(size_t size){
+static block_header *request_free_space_for_Allocating_Byte(size_t size){
     void *ptr = sbrk(HEADER_SIZE + size);
     if (ptr == (void*)-1) {
         return NULL;
