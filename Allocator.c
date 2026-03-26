@@ -30,7 +30,7 @@ static void insert_free_block_to_bin(block_header *block){
     bin[index] = block;
 }
 
-static void bin_remove_free_blocks(block_header *block){
+static void remove_used_block_from_bin(block_header *block){
     int index = get_bin_index(block->size);
     if (block->prev_free_block != NULL) {
         block->prev_free_block->next_free_block = block->next_free_block;
