@@ -48,7 +48,7 @@ static void remove_used_block_from_bin(block_header *block){
     block->prev_free_block = NULL;
 }
 
-static block_header *find_free_block(size_t size){
+static block_header *find_free_block_for_allocating(size_t size){
     int index = get_bin_index(size); // 100
     for (int i = index; i < BIN_COUNT; i++) {
         block_header *current = bin[i]; // 3
