@@ -18,7 +18,7 @@ static int get_free_block_index_from_bin(size_t size){
    return index;
 }
 
-static void bin_insert_free_blocks(block_header *block){
+static void insert_free_block_to_bin(block_header *block){
     int index = get_bin_index(block->size);
 
     block->next_free_block = bin[index];
