@@ -1,4 +1,4 @@
-#include "Allocator.h" // import the Allocator.h file for using the APIs
+#include "Allocator.h" // import the Allocator.h file for using the API's
 #include <unistd.h> // used for brk, sbrk for heap memory allocation
 #include <sys/mman.h> // for mmap expand the heap storage with mmap using os
 #include <string.h> // for string functions
